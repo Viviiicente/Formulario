@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+* {
+    margin:  0;
+    padding:  0;
+    }
+
+    .background{
+        background: url("img/imgcad2.jpg") center ;
+        display: flex; 
+        justify-content: center;
+        
+        height: 100vh;
+        
+    }
+    
+    .container{
+    
+    font-family: Arial, Helvetica, sans-serif;    
+    width: 820px;
+    height:600px;
+        
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+       background: rgba(0, 0, 0, 0.6);
+        background-image: linear-gradient(to top,rgba(0,0,0,0.03) 0,rgba(0, 0, 0, 0.003) 60%,rgba(0,0,0,0.003) 100%);
+        position: absolute;
+        
+    }
+    
+    h1{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        text-align: center;
+        color: rgb(255, 123, 0);
+      }
+
+    label{
+        
+        color:rgb(245, 245, 245);
+    }
+
+    input:not(input[type=checkbox]){
+        height:25px;
+        background-color: rgb(228, 220, 220);
+        text-decoration: none;
+        font-family: sans-serif;
+        font-size: 16px;
+        border-color: rgb(255, 255, 255);
+    }
+
+#nome{
+    margin-top: 20px;
+    width: 640px;
+    
+}
+
+#idade{
+    margin-top: 10px;
+    width: 200px;
+    }
+
+#Sexo{
+    width: 150px;
+    height:35px;
+    background-color: rgb(228, 220, 220);
+}
+
+#cep{
+    margin-top: 70px;
+    width: 100px;
+    
+}
+
+button#cep{
+       width: 30px;  
+       height:28px;
+    
+      }  
+
+
+#logradouro{
+  
+    margin-top: 70px;
+    width: 290px;
+    
+}
+
+#numero{
+    
+    margin-top: 70px;
+    width: 65px;
+}
+
+#complemento{
+    margin-top: 20px;
+    width: 155px;
+}
+#bairro{
+    margin-top: 20px; 
+    width: 160px;
+}
+#cidade{
+    margin-top: 20px; 
+    width: 195px;
+    
+}
+
+#uf{
+    margin-top: 20px;
+    width:100px;
+    height:30px;
+    background-color: rgb(228, 220, 220);
+}
+
+#tel{
+    margin-top: 20px;
+    width:150px;
+}
+#cel{
+    margin-top: 20px;
+    width:145px;
+    
+}
+
+#email{
+    margin-top: 20px;
+    width:640px;
+}
+   
+  
+
+    button.BOTTON{
+        font-family: 'verdana', sans-serif;
+        font-size: 16px;
+        border: 0;
+        background-color: rgb(204, 204, 211);
+        color: rgb(0, 0, 0);
+        width: 400px;
+        height: 35px;
+        margin: 50px;
+        margin-left: 150px;
+        cursor: pointer;
+    }
+    button:hover{
+        background-color: rgb(255, 123, 0);
+    }
+
+    
