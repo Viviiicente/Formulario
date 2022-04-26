@@ -5,6 +5,7 @@
     padding:  0;
     }
 
+
     .background{
         background: url("img/imgcad2.jpg") center ;
         display: flex; 
@@ -14,9 +15,9 @@
     }
     
     .container{
-    
+    padding: 10px;  
     font-family: Arial, Helvetica, sans-serif;    
-    width: 820px;
+    width: 750px;
     height:600px;
         
         display:flex;
@@ -28,6 +29,8 @@
         position: absolute;
         
     }
+
+   
     
     h1{
         font-family: Arial, Helvetica, sans-serif;
@@ -69,29 +72,25 @@
 
 #cep{
     margin-top: 70px;
-    width: 100px;
+    width: 120px;
     
 }
 
 
 
-#logradouro{
+#rua{
   
     margin-top: 70px;
-    width: 290px;
+    width: 390px;
     
 }
 
 #numero{
     
     margin-top: 70px;
-    width: 65px;
+    width: 70px;
 }
 
-#complemento{
-    margin-top: 20px;
-    width: 155px;
-}
 #bairro{
     margin-top: 20px; 
     width: 200px;

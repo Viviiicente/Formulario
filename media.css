@@ -67,25 +67,20 @@ h1{
 #rua{
    margin: auto;
     margin-top: 10px;
-    width: 310px;
+    width: 230px;
     
 }
 
 #numero{
     margin: auto;
     margin-top: 10px;
-    width: 30px;
+    width: 40px;
 }
 
-#complemento{
-    margin: auto;
-    margin-top: 20px;
-    width: 250px;
-}
 #bairro{
     margin: auto;
     margin-top: 20px; 
-    width: 250px;
+    width: 251px;
 }
 #cidade{
     margin: auto;
@@ -96,7 +91,7 @@ h1{
 
 #uf{
     margin-top: 20px;
-    width:240px;
+    width:239px;
     height:30px;
     background-color: rgb(228, 220, 220);
 }
@@ -109,7 +104,7 @@ h1{
 }
 #cel{
     margin-top: 20px;
-    width:190px;
+    width:189px;
     
 }
 

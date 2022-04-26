@@ -23,7 +23,7 @@
                 <br>
                 
 
-        <form action="https://formsubmit.co/viviicente@outlook.com" method="POST">
+        <form>
         <label for="nome">Nome:</label>
 		<input id="nome" type="text" required/><br>
         <label for="idade">Data de Nascimento:</label> 
@@ -36,12 +36,14 @@
                 <option>Outro</option>
             </select> <br>
             
-            <form method="get" action=".">
+            
                 <label>Cep:
                 <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
                        onblur="pesquisacep(this.value);" /></label> 
                 <label>Rua:
-                <input name="rua" type="text" id="rua" size="60" /> </label> <br/>
+                <input name="rua" type="text" id="rua" size="60" /> </label> 
+                <label>N:
+                    <input name="numero" type="text" id="numero" size="60" /> </label><br/>
                 <label>Bairro:
                 <input name="bairro" type="text" id="bairro" size="40" /></label> 
                 <label>Cidade:
@@ -49,7 +51,7 @@
                 <label>Estado:
                 <input name="uf" type="text" id="uf" size="2" /></label> <br/>
                 
-              </form>
+              
         <label for="tel"> DDD+ Telefone </label>
          <input id="tel" type="tel" required/>
         <label for="cel"> DDD+ Celular </label>
