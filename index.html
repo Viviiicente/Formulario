@@ -26,7 +26,7 @@
 		<input id="nome" type="text" required/><br>
         <label for="idade">Data de Nascimento:</label> 
 		<input id="idade" type="date" required/>
-       <label for="Sexo">Sexo:</label>
+       <label for="Sexo"> Sexo:</label>
             <select id="Sexo" name="my_html_select_box" > 
                 <option aria-invalid="true">Selecione</option>
                 <option>Feminino</option>
@@ -34,50 +34,20 @@
                 <option>Outro</option>
             </select> <br>
             
-            <label for="cep">CEP:</label>
-            <input id="cep" type="text" required/>
-            <button id="cep" type="submit">&#128269;</button>
-            <label for="logradouro">Endereço:</label>
-            <input id="logradouro" type="text" required/>
-            <label for="numero">Número:</label>
-            <input id="numero" type="text" /><br>
-            <label for="complemento">Compl:</label>
-            <input id="complemento" type="text"/>
-            <label for="bairro">Bairro:</label>
-            <input id="bairro" type="text" required/>
-            <label for="cidade">Cidade:</label>
-            <input id="cidade" type="text" required/><br>
-            <label for="uf">Estado:</label>
-            <select id="uf">
-                <option value="AC">Acre</option>
-                <option value="AL">Alagoas</option>
-                <option value="AP">Amapá</option>
-                <option value="AM">Amazonas</option>
-                <option value="BA">Bahia</option>
-                <option value="CE">Ceará</option>
-                <option value="DF">Distrito Federal</option>
-                <option value="ES">Espírito Santo</option>
-                <option value="GO">Goiás</option>
-                <option value="MA">Maranhão</option>
-                <option value="MT">Mato Grosso</option>
-                <option value="MS">Mato Grosso do Sul</option>
-                <option value="MG">Minas Gerais</option>
-                <option value="PA">Pará</option>
-                <option value="PB">Paraíba</option>
-                <option value="PR">Paraná</option>
-                <option value="PE">Pernambuco</option>
-                <option value="PI">Piauí</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="RN">Rio Grande do Norte</option>
-                <option value="RS">Rio Grande do Sul</option>
-                <option value="RO">Rondônia</option>
-                <option value="RR">Roraima</option>
-                <option value="SC">Santa Catarina</option>
-                <option value="SP">São Paulo</option>
-                <option value="SE">Sergipe</option>
-                <option value="TO">Tocantins</option>
-            </select>
-
+            <form method="get" action=".">
+                <label>Cep:
+                <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+                       onblur="pesquisacep(this.value);" /></label> 
+                <label>Rua:
+                <input name="rua" type="text" id="rua" size="60" /> </label> <br/>
+                <label>Bairro:
+                <input name="bairro" type="text" id="bairro" size="40" /></label> 
+                <label>Cidade:
+                <input name="cidade" type="text" id="cidade" size="40" /></label> 
+                <label>Estado:
+                <input name="uf" type="text" id="uf" size="2" /></label> <br/>
+                
+              </form>
         <label for="tel"> DDD+ Telefone </label>
          <input id="tel" type="tel" required/>
         <label for="cel"> DDD+ Celular </label>
@@ -92,25 +62,78 @@
     </div>
         </div>
     </form>
-    <script type="text/javascript">
-        $("#cep").focusout(function(){
-      $.ajax({
-        
-        url: 'https://viacep.com.br/ws/'+$(this).val()+'/json/unicode/',
-        
-        dataType: 'json',
-      
-        success: function(resposta){
-            $("#logradouro").val(resposta.logradouro);
-            $("#bairro").val(resposta.bairro);
-            $("#cidade").val(resposta.localidade);
-            $("#uf").val(resposta.uf);
-        
+
+    <script>
+    
+        function limpa_formulário_cep() {
+                //Limpa valores do formulário de cep.
+                document.getElementById('rua').value=("");
+                document.getElementById('bairro').value=("");
+                document.getElementById('cidade').value=("");
+                document.getElementById('uf').value=("");
+                
         }
-    });
-       
-        });
-        
+    
+        function meu_callback(conteudo) {
+            if (!("erro" in conteudo)) {
+                //Atualiza os campos com os valores.
+                document.getElementById('rua').value=(conteudo.logradouro);
+                document.getElementById('bairro').value=(conteudo.bairro);
+                document.getElementById('cidade').value=(conteudo.localidade);
+                document.getElementById('uf').value=(conteudo.uf);
+                
+            } //end if.
+            else {
+                //CEP não Encontrado.
+                limpa_formulário_cep();
+                alert("CEP não encontrado.");
+            }
+        }
+            
+        function pesquisacep(valor) {
+    
+            //Nova variável "cep" somente com dígitos.
+            var cep = valor.replace(/\D/g, '');
+    
+            //Verifica se campo cep possui valor informado.
+            if (cep != "") {
+    
+                //Expressão regular para validar o CEP.
+                var validacep = /^[0-9]{8}$/;
+    
+                //Valida o formato do CEP.
+                if(validacep.test(cep)) {
+    
+                    //Preenche os campos com "..." enquanto consulta webservice.
+                    document.getElementById('rua').value="...";
+                    document.getElementById('bairro').value="...";
+                    document.getElementById('cidade').value="...";
+                    document.getElementById('uf').value="...";
+                   
+    
+                    //Cria um elemento javascript.
+                    var script = document.createElement('script');
+    
+                    //Sincroniza com o callback.
+                    script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+    
+                    //Insere script no documento e carrega o conteúdo.
+                    document.body.appendChild(script);
+    
+                } //end if.
+                else {
+                    //cep é inválido.
+                    limpa_formulário_cep();
+                    alert("Formato de CEP inválido.");
+                }
+            } //end if.
+            else {
+                //cep sem valor, limpa formulário.
+                limpa_formulário_cep();
+            }
+        };
+    
         </script>
+   
 </body>
 </html>

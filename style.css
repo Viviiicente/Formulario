@@ -73,11 +73,6 @@
     
 }
 
-button#cep{
-       width: 30px;  
-       height:28px;
-    
-      }  
 
 
 #logradouro{
@@ -99,34 +94,34 @@ button#cep{
 }
 #bairro{
     margin-top: 20px; 
-    width: 160px;
+    width: 200px;
 }
 #cidade{
     margin-top: 20px; 
-    width: 195px;
+    width: 200px;
     
 }
 
 #uf{
     margin-top: 20px;
-    width:100px;
+    width:110px;
     height:30px;
     background-color: rgb(228, 220, 220);
 }
 
 #tel{
     margin-top: 20px;
-    width:150px;
+    width:235px;
 }
 #cel{
     margin-top: 20px;
-    width:145px;
+    width:235px;
     
 }
 
 #email{
     margin-top: 20px;
-    width:640px;
+    width:645px;
 }
    
   
