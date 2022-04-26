@@ -1,0 +1,125 @@
+@media (max-width:1000px) {
+    
+*{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.background{
+    background-image: none;
+}
+
+.container{
+    width: 350px;
+    height: 90vh;
+    
+
+}
+
+form{
+    margin: auto;
+    flex-direction: column;
+}
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    color: rgb(255, 123, 0);
+  }
+
+#nome{
+    margin-top: 20px;
+    margin: auto;
+    width: 250px;
+    
+}
+
+#idade{
+    margin: auto;
+    margin-top: 10px;
+    width: 150px;
+    }
+
+#Sexo{
+    margin: auto;
+    width: 95px;
+    height:35px;
+    background-color: rgb(228, 220, 220);
+}
+
+#cep{
+    margin: auto;
+    margin-top:10px;
+    width: 210px;
+    line-break: auto;
+}
+
+button#cep{
+       width: 45px;  
+       height:30px;
+    
+      }  
+
+
+#logradouro{
+   margin: auto;
+    margin-top: 10px;
+    width: 220px;
+    
+}
+
+#numero{
+    margin: auto;
+    margin-top: 10px;
+    width: 30px;
+}
+
+#complemento{
+    margin: auto;
+    margin-top: 20px;
+    width: 250px;
+}
+#bairro{
+    margin: auto;
+    margin-top: 20px; 
+    width: 250px;
+}
+#cidade{
+    margin: auto;
+    margin-top: 20px; 
+    width: 240px;
+    
+}
+
+#uf{
+    margin-top: 20px;
+    width:240px;
+    height:30px;
+    background-color: rgb(228, 220, 220);
+}
+
+
+
+#tel{
+    margin-top: 20px;
+    width:180px;
+}
+#cel{
+    margin-top: 20px;
+    width:190px;
+    
+}
+
+#email{
+    margin-top: 20px;
+    width:240px;
+}
+   
+button.BOTTON{
+   margin: auto;
+    margin-top: 10px;
+   width: 320px;   
+}
+
+}
